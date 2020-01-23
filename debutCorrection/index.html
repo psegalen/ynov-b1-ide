@@ -9,7 +9,7 @@
   <body>
     <div class="racine">
       <div class="boutons">
-        <button onclick="changerCouleur()">
+        <button onclick="changerToutesCouleurs()">
           Changer la couleur des carrés
         </button>
         <button onclick="ajouterCarre()">Ajouter un carré à la fin</button>
@@ -21,5 +21,11 @@
         <canvas class="carre"></canvas>
       </div>
     </div>
+    <script>
+      var carres = document.getElementsByClassName("carre");
+      for (var i = 0; i < carres.length; i++) {
+        carres[i].addEventListener("click", cliqueCarre);
+      }
+    </script>
   </body>
 </html>
