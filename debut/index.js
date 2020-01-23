@@ -1,3 +1,6 @@
+var couleurs = ["red", "blue", "green", "black", "white", "purple"];
+var indiceCouleurActuelle = 0;
+
 function changerCouleur() {
   alert("Il faut changer la couleur !!!");
 }
