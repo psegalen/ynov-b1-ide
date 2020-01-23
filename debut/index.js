@@ -1,4 +1,15 @@
-var couleurs = ["red", "blue", "green", "black", "white", "purple"];
+var couleurs = [
+  "red",
+  "blue",
+  "green",
+  "black",
+  "gray",
+  "purple",
+  "orange",
+  "yellow",
+  "cyan",
+  "magenta"
+];
 var indiceCouleurActuelle = 0;
 
 function changerCouleur() {

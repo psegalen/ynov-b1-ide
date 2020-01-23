@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>Début</title>
+    <!-- c'est comme ceci qu'on lie le HMTL avec un fichier CSS -->
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <!-- c'est comme ceci qu'on lie le HMTL avec un fichier JS -->
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <div class="racine">
+      <div class="boutons">
+        <button onclick="changerCouleur()">
+          Changer la couleur des carrés
+        </button>
+        <button onclick="ajouterCarre()">Ajouter un carré à la fin</button>
+        <button onclick="enleverCarre()">Enlever le dernier carré</button>
+      </div>
+      <div class="carres">
+        <canvas class="carre"></canvas>
+        <canvas class="carre"></canvas>
+        <canvas class="carre"></canvas>
+      </div>
+    </div>
+  </body>
+</html>
