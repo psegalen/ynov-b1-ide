@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title>Form</title>
+    <!-- c'est comme ceci qu'on lie le HMTL avec un fichier CSS -->
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <!-- c'est comme ceci qu'on lie le HMTL avec un fichier JS -->
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <div class="racine">
+      <p>Formulaire d'inscription</p>
+      <table style="border: 0">
+        <tr>
+          <td>
+            <span>Nom complet :</span>
+          </td>
+          <td id="tdNom">
+            <input type="text" id="nom" />
+            <span id="errorNom" class="error"></span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span>Mot de passe :</span>
+          </td>
+          <td id="tdMotDePasse">
+            <input type="password" id="motDePasse" />
+            <span id="errorPass" class="error"></span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span>Date de naissance :</span>
+          </td>
+          <td id="tdDateDeNaissance">
+            <input type="text" id="dateNaissance" />
+            <span id="errorDate" class="error"></span>
+          </td>
+        </tr>
+      </table>
+
+      <button onclick="inscrire()">S'inscrire</button>
+    </div>
+  </body>
+</html>
