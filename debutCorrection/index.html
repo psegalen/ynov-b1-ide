@@ -6,26 +6,16 @@
     <!-- c'est comme ceci qu'on lie le HMTL avec un fichier JS -->
     <script src="index.js"></script>
   </head>
-  <body>
+  <body onload="init()">
     <div class="racine">
       <div class="boutons">
-        <button onclick="changerToutesCouleurs()">
+        <button onclick="changerCouleur()">
           Changer la couleur des carrés
         </button>
         <button onclick="ajouterCarre()">Ajouter un carré à la fin</button>
         <button onclick="enleverCarre()">Enlever le dernier carré</button>
       </div>
-      <div class="carres">
-        <canvas class="carre"></canvas>
-        <canvas class="carre"></canvas>
-        <canvas class="carre"></canvas>
-      </div>
+      <div class="carres"><canvas class="carre"></div>
     </div>
-    <script>
-      var carres = document.getElementsByClassName("carre");
-      for (var i = 0; i < carres.length; i++) {
-        carres[i].addEventListener("click", cliqueCarre);
-      }
-    </script>
   </body>
 </html>

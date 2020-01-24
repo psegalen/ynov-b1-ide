@@ -10,36 +10,53 @@ var couleurs = [
   "cyan",
   "magenta"
 ];
-var indiceCouleurActuelle = 0;
 
-function changerToutesCouleurs() {
-  var carres = document.getElementsByClassName("carre");
-  for (var i = 0; i < carres.length; i++) {
-    changerCouleur(carres[i]);
+function changerCouleur() {
+  var divCarres = document.querySelector(".carres");
+  var enfants = divCarres.childNodes;
+  for (let i = 0; i < enfants.length; i++) {
+    const element = enfants[i];
+    if (element.className == "carre") {
+      changerCouleurCarre(element);
+    }
   }
 }
 
-function cliqueCarre(evt) {
-  changerCouleur(evt.target);
-}
-
-function changerCouleur(carre) {
-  var indiceCouleurCarre = couleurs.indexOf(
-    carre.style.backgroundColor || "red"
-  );
-  carre.style.backgroundColor =
-    couleurs[(indiceCouleurCarre + 1) % couleurs.length];
-}
-
 function ajouterCarre() {
-  var carres = document.querySelector(".carres");
-  var nouveauCarre = document.createElement("canvas");
-  nouveauCarre.className = "carre";
-  nouveauCarre.addEventListener("click", cliqueCarre);
-  carres.appendChild(nouveauCarre);
+  var divCarres = document.querySelector(".carres");
+  var nouveauCarre;
+  if (divCarres.hasChildNodes()) {
+    nouveauCarre = divCarres.childNodes[0].cloneNode();
+  } else {
+    nouveauCarre = document.createElement("canvas");
+    nouveauCarre.className = "carre";
+    nouveauCarre.style.backgroundColor = couleurs[indiceCouleurActuelle];
+  }
+  nouveauCarre.addEventListener("click", gererClic);
+  divCarres.appendChild(nouveauCarre);
 }
 
 function enleverCarre() {
-  var carres = document.querySelector(".carres");
-  carres.removeChild(carres.lastChild);
+  var divCarres = document.querySelector(".carres");
+  if (divCarres.hasChildNodes()) {
+    divCarres.removeChild(divCarres.lastChild);
+  }
+}
+
+function changerCouleurCarre(carre) {
+  var couleur = carre.style.backgroundColor;
+  if (couleur.length == 0) couleur = "red";
+  var indiceCouleur = couleurs.indexOf(couleur);
+  var nouvelleCouleur = couleurs[(indiceCouleur + 1) % couleurs.length];
+  carre.style.backgroundColor = nouvelleCouleur;
+}
+
+function gererClic(event) {
+  var carre = event.target;
+  changerCouleurCarre(carre);
+}
+
+function init() {
+  var carre = document.querySelector(".carre");
+  carre.addEventListener("click", gererClic);
 }
