@@ -8,12 +8,40 @@ var messagesErreur = [
   "Vous devez avoir 18 ans pour vous inscrire"
 ];
 
+var nomAChange = false;
+var passAChange = false;
+var dateAChange = false;
+
 function inscrire() {
   var nomEstValide = validerNom();
   var passEstValide = validerMotDePasse();
   var dateEstValide = validerDateNaissance();
   if (nomEstValide && passEstValide && dateEstValide) {
     alert("Ok");
+  }
+}
+
+function changeNom() {
+  nomAChange = true;
+  validerGlobal();
+}
+
+function changePass() {
+  passAChange = true;
+  validerGlobal();
+}
+
+function changeDate() {
+  dateAChange = true;
+  validerGlobal();
+}
+
+function validerGlobal() {
+  var nomEstValide = nomAChange ? validerNom() : false;
+  var passEstValide = passAChange ? validerMotDePasse() : false;
+  var dateEstValide = dateAChange ? validerDateNaissance() : false;
+  if (nomEstValide && passEstValide && dateEstValide) {
+    document.getElementById("inscription").disabled = false;
   }
 }
 

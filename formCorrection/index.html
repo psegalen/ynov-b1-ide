@@ -15,7 +15,7 @@
             <span>Nom complet :</span>
           </td>
           <td id="tdNom">
-            <input type="text" id="nom" />
+            <input type="text" id="nom" onchange="changeNom()" />
             <span id="errorNom" class="error"></span>
           </td>
         </tr>
@@ -24,7 +24,7 @@
             <span>Mot de passe :</span>
           </td>
           <td id="tdMotDePasse">
-            <input type="password" id="motDePasse" />
+            <input type="password" id="motDePasse" onchange="changePass()" />
             <span id="errorPass" class="error"></span>
           </td>
         </tr>
@@ -33,13 +33,15 @@
             <span>Date de naissance :</span>
           </td>
           <td id="tdDateDeNaissance">
-            <input type="text" id="dateNaissance" />
+            <input type="text" id="dateNaissance" onchange="changeDate()" />
             <span id="errorDate" class="error"></span>
           </td>
         </tr>
       </table>
 
-      <button onclick="inscrire()">S'inscrire</button>
+      <button onclick="inscrire()" id="inscription" disabled="disabled">
+        S'inscrire
+      </button>
     </div>
   </body>
 </html>
